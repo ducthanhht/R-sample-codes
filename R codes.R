@@ -1,15 +1,16 @@
 
 ###################################################################
-# Description       : This program produces graphs of Self-productivity,
-# cross-productivity, Dynamic Complementarity between Investments and Cognitive Skills
+# Description: This program produces graphs of self-productivity,
+# cross-productivity, and dynamic complementarity between Investments 
+# and cognitive skills for my Ph.D paper: Parental Investment and Child Development
 ###################################################################
 
 ###################################################################
 # DATA
 
 # Factors.csv contains the  grid of values of factors (cognitive skills, noncognitive skills 
-# health and investment are individual-specifically, randomly drawn from 
-# the estimated distributions of these factors that are estimated in Matlab. 
+# health and investment which are individual-specifically, randomly drawn from 
+# the estimated distributions of these factors. 
 
 # Deciles1.csv contains the deciles of the factors individual-specifically, randomly drawn from 
 # the estimated distributions of these factors without investment factor.
@@ -17,19 +18,27 @@
 # Deciles2.csv contains the deciles of the factors individual-specifically, randomly drawn from 
 # the estimated distributions of these factors with investment factor. 
 
-# Coefs.csv contains the coefficients estimated in Matlab
-# Xcescfmean.csv contains means of endowments to be used as inputs in the functions
+# Coefs.csv contains the estimated coefficients.
+# Xcescfmean.csv contains means of endowments to be used as inputs in the functions.
 ###################################################################
 
 rm(list=ls())
 
 #set.seed(23031984)
 
-dir<-("~/Desktop/Job application/Github/Sample codes/R/") 
+###################################################################
+# Change directories to your own specifications in order to run
+###################################################################
+
+dir<-("~/Desktop/Github/Sample codes/R/") 
 
 # dir_data           <- paste(dir,c("Data/"), sep="")
 # dir_output <-paste(dir, c("Output/"), sep="")
 # dir_outputPF      <- paste(dir,c("Output/Final/"), sep="")
+
+###################################################################
+# Load data
+###################################################################
 
 setwd(dir)
 
@@ -58,8 +67,6 @@ healthcfcoef <- coefs[[3]]
 Xcescfmean <- t(Xcescfmean)
 
 cogcfcoef1 <- cogcfcoef[1]
-
-
 
 ###################################################################
 # SETTINGS FOR THE GRAPHS
